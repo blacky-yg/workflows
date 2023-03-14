@@ -4,4 +4,7 @@ on: [push]
 
 jobs:
   build:
-    - run: date
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the date
+      - run: date
