@@ -6,7 +6,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
       - name: Mirror Pushing
         uses: pixta-dev/repository-mirroring-action@v1.1.1
         env:
