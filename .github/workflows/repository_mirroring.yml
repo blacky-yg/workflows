@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: pixta-dev/repository-mirroring-action
+      - name: Mirror Pushing
+        uses: pixta-dev/repository-mirroring-action@v1.1.1
+        env:
+          GITHUB_SSH_KEY_PRIVATE: ${{ secrets.GITHUB_SSH_KEY_PRIVATE}}
         with:
           target_repo_url: git@github.com:blacky-yg/workflow_mirror.git
           ssh_private_key: ${{ secrets.GITHUB_SSH_KEY_PRIVATE }}
+        run: echo GITHUB_SSH_KEY_PRIVATE
