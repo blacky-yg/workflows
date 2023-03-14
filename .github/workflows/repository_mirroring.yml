@@ -1,0 +1,13 @@
+name: Repository Mirroring
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pixta-dev/repository-mirroring-action
+        with:
+          target_repo_url: git@github.com:blacky-yg/workflow_mirror.git
+          ssh_private_key: ${{ secrets.GITHUB_SSH_KEY_PRIVATE }}
