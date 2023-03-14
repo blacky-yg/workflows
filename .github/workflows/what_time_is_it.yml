@@ -1,0 +1,8 @@
+name: What time is it
+
+on: [push]
+
+jobs:
+  build:
+    steps:
+      - run: date
